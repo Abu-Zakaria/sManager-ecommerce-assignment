@@ -24,3 +24,4 @@ Route::post('/add-to-cart/{id}', [CartController::class, 'add']);
 Route::get('/cart', [CartController::class, 'index']);
 Route::patch('/cart', [CartController::class, 'update']);
 Route::get('/checkout', [CheckoutController::class, 'index']);
+Route::post('/checkout', [CheckoutController::class, 'store']);

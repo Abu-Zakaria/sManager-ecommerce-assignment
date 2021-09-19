@@ -18,7 +18,7 @@ class CreateOrdersTable extends Migration
 
             $table->integer("user_id");
             $table->decimal("sub_total");
-            $table->text("note");
+            $table->text("note")->nullable();
             $table->enum("status", ['ordered', 'shipped', 'delivered']);
 
             $table->timestamps();
