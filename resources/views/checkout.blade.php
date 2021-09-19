@@ -19,6 +19,7 @@
                         </div>
                     @endif
 
+                    Total price: {{ $total_price }}
                     <form method="POST" action="/checkout">
                         @csrf
                         <label><b>Select a payment method</b></label>

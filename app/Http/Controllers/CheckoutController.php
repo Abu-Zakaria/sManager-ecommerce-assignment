@@ -16,17 +16,14 @@ class CheckoutController extends Controller
     {
         $data = json_decode(Cookie::get('cart'), true);
 
-        $cart = [];
+        $total_price = 0;
         foreach($data as $key => $value)
         {
             $product = Product::find($key);
             $quantity = $value;
-            $cart[] = [
-                'product' => $product,
-                'quantity' => $quantity,
-            ];
+            $total_price += $quantity * $product->price;
         }
-        return view('checkout');
+        return view('checkout', compact('total_price'));
     }
 
     public function store(CheckoutRequest $request)
