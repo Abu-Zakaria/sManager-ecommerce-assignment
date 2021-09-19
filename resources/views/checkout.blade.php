@@ -88,6 +88,6 @@
                     cod_details.style.display = "none";
                     online_payment_details.style.display = "block";
                 })
-        }, 1000)
+        }, 300)
     </script>
 @endsection
