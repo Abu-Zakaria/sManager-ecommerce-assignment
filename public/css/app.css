@@ -10002,3 +10002,6 @@ h3 {
     border-color: #dee2e6;
   }
 }
+.cart-product-item {
+  list-style-type: none;
+}
