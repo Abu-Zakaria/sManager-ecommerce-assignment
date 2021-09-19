@@ -10,7 +10,11 @@ class CartController extends Controller
 {
     public function index()
     {
-        $data = json_decode(Cookie::get('cart'), true);
+        $data = [];
+        if(Cookie::has('cart') && Cookie::get('cart') != '[]')
+        {
+            $data = json_decode(Cookie::get('cart'), true);
+        }
         $products = Product::find(array_keys($data));
         $cart_quantities = array_values($data);
 
@@ -35,7 +39,7 @@ class CartController extends Controller
             $data = Cookie::get('cart');
             $data = json_decode($data, true);
 
-            if(isset($data->{$id}))
+            if(isset($data[$id]))
             {
                 $data[$id] = $data[$id] + 1;
             }
@@ -70,5 +74,11 @@ class CartController extends Controller
         Cookie::queue('cart', json_encode($cart), 60 * 24);
 
         return redirect()->back()->with('status', "Cart updated!");
+    }
+
+    public function clearCart()
+    {
+        Cookie::queue('cart', json_encode([]), 1);
+        return back()->with('status', 'Cart has been cleared!');
     }
 }

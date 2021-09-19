@@ -78,6 +78,8 @@ class CheckoutController extends Controller
                 ]);
             }
 
+            Cookie::queue('cart', json_encode([]), 1);
+
             return redirect()->to('/')->with('status', 'Successfully placed your order!');
         }
     }

@@ -13,6 +13,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    @if(count($errors) > 0)
+                        <div class="alert alert-warning" role="alert">
+                            There was some problem with your submission. Please try again with all inputs filled up!
+                        </div>
+                    @endif
 
                     <form method="POST" action="/checkout">
                         @csrf

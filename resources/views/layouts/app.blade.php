@@ -53,6 +53,9 @@
                             @endif
                         @else
                             <li class="nav-item">
+                                <a href="/orders" class="nav-link">Orders</a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="/cart" class="nav-link">Cart</a>
                             </li>
                             <li class="nav-item dropdown">

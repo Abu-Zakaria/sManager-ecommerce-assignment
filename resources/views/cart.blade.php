@@ -37,6 +37,9 @@
                             <a href="/checkout">
                                 <button class="btn btn-warning float-right" type="button">Checkout</button>
                             </a>
+                            <a href="/clear-cart">
+                                <button class="btn btn-info float-right" type="button">Clear Cart</button>
+                            </a>
                         @endif
                     </form>
                 </div>
